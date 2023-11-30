@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+:root{
+  --dark: #242424;
+  --white: #ffffff;
+  --green: rgb(14, 156, 14);
+  --rgbBackground: rgba(36, 36, 36, 0.4);
+  --blue: #3535ff;
+}
+
+.text-green{
+  color: var(--green);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background:  url(../images/bg.jpg) var(--dark) center/cover no-repeat;
+  position: relative;
+  z-index: 0;
+}
+body::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: var(--rgbBackground);
+}
+
+.content{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-height:600px){
+  .content{
+    height: auto;
+    padding: 100px 0;
+  }
+}
+
+.container {
+  width: 600px;
+  padding:32px 24px ;
+  height: 500px;
+  overflow-y: scroll;
+  background-color: var(--white);
+  border-radius: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  scrollbar-width: none;
+}
+.container::-webkit-scrollbar{
+  display: none;
+}
+
+@media (max-width:768px){
+  .container{
+    width: 90%;
+  }
+}
+
+.title{
+  font: 700 32px/32px;
+  color: #242424;
+}
+
+.btn{
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+.btn.btn__success{
+  background-color: var(--green);
+  color: var(--white);
+}
+.btn.btn__submit{
+  background-color: var(--green);
+  color: var(--white);
+}
+.btn.btn__retry{
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+#quiz{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 20px;
+}
+
+
+.question {
+  font-weight: 600;
+  color: var(--dark);
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--rgbBackground);
+}
+.option , .options{
+  display: flex;
+  gap: 12px;
+}
+.options{
+  flex-direction: column;
+}
+.hide{
+  display: none;
+}
